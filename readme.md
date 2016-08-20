@@ -45,3 +45,7 @@ condaで管理できるように以下のコマンドを実行します。
  を実行してみると以下のように表示されて  
  selenium                  2.53.6                    <pip>  
 管理に追加されたことが分かります  
+Chromedriver.exeを下記のURLからダウンロードする
+>http://chromedriver.storage.googleapis.com/index.html?path=2.23/
+
+あとはseleniumからCrhomeを操るためのtestChrome.pyを作ります。  
