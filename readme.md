@@ -9,7 +9,8 @@ OS　Windows10Pro(64bit)
 python2.7なども使えるように環境を構築する  
 まずは、インストールしたAnacondaをそのまま展開(環境変数なども自動で設定してもらった)  
  インストール後、コマンドプロンプトを開いて以下を実行する  
- `conda create -n p27 python=2.7 anaconda`
+ `conda create -n p27 python=2.7 anaconda`  
  これでpython2.7の環境構築も終了です。  
+ 
  
  
