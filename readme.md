@@ -1,9 +1,8 @@
 #Pythonを勉強したことの備忘録　　
 ##導入方法　　
 ###設定元の環境
-OS　Windows10Pro(64bit)
----  
-必要になったライブラリなどをこれから随時追加するかも？
+　OS　Windows10Pro(64bit)
+　必要になったライブラリなどをこれから随時追加するかも？
 ♯♯♯導入手順
  <https://www.continuum.io/downloads>
 anacond 3.5 Installする〈64bit番〉
