@@ -37,11 +37,11 @@ condaで管理できるように以下のコマンドを実行します。
 >https://github.com/conda/conda-build/issues/119   
 
 そこで上のサイトを参考に  
-`conda update conda`
-`conda install conda-build`
-を試したところうまくいきました。
-管理に追加して具体的にどうなるのかは
- `conda list | find "selenium"`
- を実行してみると以下のように表示されて
- selenium                  2.53.6                    <pip>
-管理に追加されたことが分かります
+`conda update conda`  
+`conda install conda-build`  
+を試したところうまくいきました。  
+管理に追加して具体的にどうなるのかは  
+ `conda list | find "selenium"`  
+ を実行してみると以下のように表示されて  
+ selenium                  2.53.6                    <pip>  
+管理に追加されたことが分かります  
