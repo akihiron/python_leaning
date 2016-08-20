@@ -29,11 +29,13 @@ python2.7なども使えるように環境を構築する
 `conda remove -n py2`
 でいなくなる    
 >https://gist.github.com/aphlysia/d5fcee79ff81b8272faf   
-<さらに上のサイトよりpipでインストールするパッケージを  
+
+さらに上のサイトよりpipでインストールするパッケージを  
 condaで管理できるように以下のコマンドを実行します。  
 `conda skeleton pypi selenium`  
 ところがpythonのエラーにより失敗しました。  
 >https://github.com/conda/conda-build/issues/119   
+
 そこで上のサイトを参考に  
 `conda update conda`
 `conda install conda-build`
