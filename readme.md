@@ -28,8 +28,8 @@ python2.7なども使えるように環境を構築する
 また用意した環境が必要なくなった場合には  
 `conda remove -n py2`
 でいなくなる    
->https://gist.github.com/aphlysia/d5fcee79ff81b8272faf  
-さらに上のサイトよりpipでインストールするパッケージを  
+>https://gist.github.com/aphlysia/d5fcee79ff81b8272faf   
+<さらに上のサイトよりpipでインストールするパッケージを  
 condaで管理できるように以下のコマンドを実行します。  
 `conda skeleton pypi selenium`  
 ところがpythonのエラーにより失敗しました。  
