@@ -23,7 +23,6 @@ opencv3.1.0が入っておりきちんとpathが通っていれば(condaが自�
 `cv2.imread(r"任意の写真までのpath")`  
 pathの前にrがついているのはpythonのパスの記載の仕方なので  
 そのまま使ってください  
----
 >
 array([[[ 64,  78,  67],
         [ 71,  85,  74],
@@ -75,3 +74,9 @@ array([[[ 64,  78,  67],
         [ 46, 155,  69]]], dtype=uint8)
         
 上記のようなものが取得できました。
+これが何を意味するのかはそのうち調べます。
+続いて、取り込んだ画像を格納、表示していきます。
+`img=cv2.imread(r"C:\Users\Akihiro\Pictures\Camera Roll\WIN_20160814_12_49_27_Pro.jpg")`  
+`cv2.imshow("Image",img)`  
+`cv2.waitKey(0)`  
+最後のwaitKeyはないと画像の表示ができないため必要  
