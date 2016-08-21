@@ -2,11 +2,18 @@
 ##導入方法　　
 ###設定元の環境
 OS　Windows10Pro(64bit)  
+####python3.5.1
+####selenuim
+####opencv3.1.0 
 必要になったライブラリなどをこれから随時追加するかも？  
 今回はseleniumを使用してWebテストを行いたいので
 seleniumのインストールを行います。ですが、condaからではインストールできませんでした。  
 `pip install selenium`  
 そこで上記のようにpipを使用してinstallします。
+続いて導入したのはopencvです。  
+opencvには[2016-08-21]現在2，3というライブラリが存在していて  
+どちらを使うか悩んだのですが、勉強するなら新しい方と思い、  
+opennnncv3を導入します。(webの文献は２のほうが多そうだからそのうち２も入れると思うなーたぶん)  
 ###導入手順
  まず、<https://www.continuum.io/downloads>から
  anacond 3.5 Installする〈64bit番〉  
@@ -62,3 +69,7 @@ pipからinstallせずとも
 と表示されるのでここからinstallできるかもしれない(実行はしていませんが(;´･ω･))  
 
 opencvは上記の方法を実行したいと思います  
+上記の順番で実行すると  
+` conda install --channel https://conda.anaconda.org/menpo opencv3`  
+にたどり着きこいつを実行すると・・・
+
