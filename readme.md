@@ -55,7 +55,7 @@ pipからinstallせずとも
 `conda search selenium`  
 の指示に従って、
 `anaconda search -t conda  selenium`  
-を使い表示されたリストからPlatformsの条件を選んで
+を使い表示されたリストからPlatformsの条件を選んで  
 `anaconda show conda-forge/selenium`  
 を実行すれば  
 `conda install --channel https://conda.anaconda.org/conda-forge selenium`  
