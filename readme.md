@@ -49,3 +49,16 @@ Chromedriver.exeを下記のURLからダウンロードする
 >http://chromedriver.storage.googleapis.com/index.html?path=2.23/
 
 あとはseleniumからCrhomeを操るためのtestChrome.pyを作ります。  
+
+＊後々調べたところ  
+pipからinstallせずとも  
+`conda search selenium`  
+の指示に従って、
+`anaconda search -t conda  selenium`  
+を使い表示されたリストからPlatformsの条件を選んで
+`anaconda show conda-forge/selenium`  
+を実行すれば  
+`conda install --channel https://conda.anaconda.org/conda-forge selenium`
+と表示されるのでここからinstallできるかもしれない(実行はしていませんが(;´･ω･))  
+
+opencvは上記の方法を実行したいと思います  
