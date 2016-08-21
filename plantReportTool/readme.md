@@ -75,7 +75,7 @@ array([[[ 64,  78,  67],
         
 上記のようなものが取得できました。
 これが何を意味するのかはそのうち調べます。
-続いて、取り込んだ画像を格納、表示していきます。
+続いて、取り込んだ画像を格納、表示していきます。  
 `img=cv2.imread(r"C:\Users\Akihiro\Pictures\Camera Roll\WIN_20160814_12_49_27_Pro.jpg")`  
 `cv2.imshow("Image",img)`  
 `cv2.waitKey(0)`  
