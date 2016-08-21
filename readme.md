@@ -58,7 +58,7 @@ pipからinstallせずとも
 を使い表示されたリストからPlatformsの条件を選んで
 `anaconda show conda-forge/selenium`  
 を実行すれば  
-`conda install --channel https://conda.anaconda.org/conda-forge selenium`
+`conda install --channel https://conda.anaconda.org/conda-forge selenium`  
 と表示されるのでここからinstallできるかもしれない(実行はしていませんが(;´･ω･))  
 
 opencvは上記の方法を実行したいと思います  
