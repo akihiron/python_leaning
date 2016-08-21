@@ -72,4 +72,9 @@ opencvは上記の方法を実行したいと思います
 上記の順番で実行すると  
 ` conda install --channel https://conda.anaconda.org/menpo opencv3`  
 にたどり着きこいつを実行すると・・・
+問題なくインストールできました。
+`conda list |find "open"`で確認すると
+>>opencv3                   3.1.0                    py35_0    menpo
 
+のようにインストールしたpackageの名前が最後に入るんですね
+適当なこと言ってますが、間違ってたら教えてください。
