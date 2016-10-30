@@ -104,30 +104,30 @@ selenium.common.exceptions.WebDriverException: Message: 'geckodriver' executable
 調べても最新のFirefoxを動かすためには、
 geckodriverをとりあえずダウンロードしてpathを通しなさい
 しか出てこないので仕方なくダウンロード
-情報元：http://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path
+情報元：http://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path  
 以下のサイトからWin64bit用をダウンロード
-https://github.com/mozilla/geckodriver/releases
+https://github.com/mozilla/geckodriver/releases  
 とりあえずPATHが通っているAnaconda内において実行してみる
 上記のサイト通り同じことで怒られました。ちょっと安心(~_~)
 selenium.common.exceptions.WebDriverException: Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line
 とりあえず、指示に従って以下を実行
 `from selenium import webdriver`
-`from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`
-`binary = FirefoxBinary('path/to/installed firefox binary')`
-`browser = webdriver.Firefox(firefox_binary=binary)'
+`from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`  
+`binary = FirefoxBinary('path/to/installed firefox binary')`  
+`browser = webdriver.Firefox(firefox_binary=binary)'  
 以下のエラーメッセージという仕打ちです。正直勘弁してほしかったのですが
 selenium.common.exceptions.WebDriverException: Message: Failed to start browser:
-entity not found
+entity not found  
 以下のサイトを見ると
-情報源：http://stackoverflow.com/questions/20950748/cannot-find-firefox-binary-in-path-make-sure-firefox-is-installed
+情報源：http://stackoverflow.com/questions/20950748/cannot-find-firefox-binary-in-path-make-sure-firefox-is-installed  
 どうやらバイナリに指定するのはMozilla Firefoxのexeファイルのよう
 そこで先ほどのコマンドを
-`from selenium import webdriver`
-`from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`
-`binary = FirefoxBinary(r'C:\Program Files (x86)\Mozilla Firefox\firefox.exe')`
-`browser = webdriver.Firefox(firefox_binary=binary)'
+`from selenium import webdriver`  
+`from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`  
+`binary = FirefoxBinary(r'C:\Program Files (x86)\Mozilla Firefox\firefox.exe')`  
+`browser = webdriver.Firefox(firefox_binary=binary)'  
 に書き換えたらエラーなく動きました。
 もしかしたらそもそもseleniumのversionUP必要なかったのではと恐ろしい
 結論が出そうです；；
 まあ、Chromeなども動かすのに引数が一つ増えたけどそれだけなのでとりあえず、良しとします
-`browserc = webdriver.Chrome(r'C:\Windows\SysWOW64\chromedriver.exe')`
+`browserc = webdriver.Chrome(r'C:\Windows\SysWOW64\chromedriver.exe')`  
