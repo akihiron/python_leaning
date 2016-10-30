@@ -78,3 +78,56 @@ opencvは上記の方法を実行したいと思います
 
 のようにインストールしたpackageの名前が最後に入るんですね
 適当なこと言ってますが、間違ってたら教えてください。
+
+
+#[2016.12.30]追記
+以前ダウンロードしたseleniumを使用して
+Firefoxを起動したところ、以下のように表示され、動かなくなっていた
+selenium.common.exceptions.WebDriverException: Message: Can't load the profile. Profile Dir: C:\Users\Akihiro\AppData\Local\Temp\tmpt9vrpaat If you specified a log_file in the FirefoxBinary constructor, check it for details.
+そこで、まずはseleniumのversionUPを行った。
+Version変更方法は
+pip install -U selenium
+pipにはVersionアップのコマンドがないらしく
+-Uを使用してversionを変えるらしい
+戻す方法は知ればてない(-_=;;)
+大丈夫かな？
+
+とりあえずseleniumのversionが2.536→3.0.1になりました。
+以前の方法で管理しているのでcondaの方にもきちんと
+`conda list | find "selenium"` 
+で確かめたところ反映されていました.
+しかし、まだ動いてくれません。以下のコマンドで動作確認したところ
+`from selenium import webdriver`
+`webdriver.Firefox()`
+今度は以下のメッセージが出るようになりました。
+selenium.common.exceptions.WebDriverException: Message: 'geckodriver' executable needs to be in PATH.
+調べても最新のFirefoxを動かすためには、
+geckodriverをとりあえずダウンロードしてpathを通しなさい
+しか出てこないので仕方なくダウンロード
+情報元：http://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path
+以下のサイトからWin64bit用をダウンロード
+https://github.com/mozilla/geckodriver/releases
+とりあえずPATHが通っているAnaconda内において実行してみる
+上記のサイト通り同じことで怒られました。ちょっと安心(~_~)
+selenium.common.exceptions.WebDriverException: Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line
+とりあえず、指示に従って以下を実行
+`from selenium import webdriver`
+`from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`
+`binary = FirefoxBinary('path/to/installed firefox binary')`
+`browser = webdriver.Firefox(firefox_binary=binary)'
+以下のエラーメッセージという仕打ちです。正直勘弁してほしかったのですが
+selenium.common.exceptions.WebDriverException: Message: Failed to start browser:
+entity not found
+以下のサイトを見ると
+情報源：http://stackoverflow.com/questions/20950748/cannot-find-firefox-binary-in-path-make-sure-firefox-is-installed
+どうやらバイナリに指定するのはMozilla Firefoxのexeファイルのよう
+そこで先ほどのコマンドを
+`from selenium import webdriver`
+`from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`
+`binary = FirefoxBinary(r'C:\Program Files (x86)\Mozilla Firefox\firefox.exe')`
+`browser = webdriver.Firefox(firefox_binary=binary)'
+に書き換えたらエラーなく動きました。
+もしかしたらそもそもseleniumのversionUP必要なかったのではと恐ろしい
+結論が出そうです；；
+まあ、Chromeなども動かすのに引数が一つ増えたけどそれだけなのでとりあえず、良しとします
+`browserc = webdriver.Chrome(r'C:\Windows\SysWOW64\chromedriver.exe')`
