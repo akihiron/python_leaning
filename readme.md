@@ -80,7 +80,7 @@ opencvは上記の方法を実行したいと思います
 適当なこと言ってますが、間違ってたら教えてください。
 
 
-#[2016.12.30]追記
+#[2016.10.30]追記
 以前ダウンロードしたseleniumを使用して  
 Firefoxを起動したところ、以下のように表示され、動かなくなっていた  
 selenium.common.exceptions.WebDriverException: Message: Can't load the profile. Profile Dir: C:\Users\Akihiro\AppData\Local\Temp\tmpt9vrpaat If you specified a log_file in the FirefoxBinary constructor, check it for details.
