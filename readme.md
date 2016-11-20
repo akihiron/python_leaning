@@ -1,4 +1,4 @@
-#Pythonを勉強したことの備忘録　　
+#Pythonを勉強したことの備忘録(環境構築)　　
 ##導入方法　　
 ###設定元の環境
 OS　Windows10Pro(64bit)  
@@ -131,3 +131,31 @@ entity not found
 結論が出そうです；；  
 まあ、Chromeなども動かすのに引数が一つ増えたけどそれだけなのでとりあえず、良しとします  
 `browserc = webdriver.Chrome(r'C:\Windows\SysWOW64\chromedriver.exe')`  
+
+#2016/11/20　Android seleniumについて  
+##環境構築  
+今回は以下のページを参考にAndroidのselenium導入についてやっていきます。
+http://zafiel.wingall.com/archives/6919
+さてとまずは、
+コマンドプロンプトからadbを実行して・・・
+(;;)残念Android-SDKが未導入でした。
+まずはそっからかよ(;´д｀)トホホ
+方法がわからない方はこの辺参考にしてください
+http://www.javadrive.jp/android/install/index1.html
+念のため、導入手順を書いておくと
+1．https://developer.android.com/studio/index.html#downloadsからandroid-sdk_r24.4.1-windows.zip
+インストーラなしをダウンロードする  
+2．zipフォルダを展開して、SDK Manager.exeを実行  
+⇒失敗(javaがインストールされてなかったw)  
+3.上記の失敗を踏まえてJDKをhttp://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.htmlから
+ダウンロードPathの設定をする。
+4.SDKが実行できるようになっていたので  
+Android SDK Tools,Android SDK Platform-Toolsをダウンロード
+これでADB周りは整うはず,ちなみに以下のサイトに従ってAPI16のSDK Platformをインストールしたところ
+platforms\android-16にuiautomator.jarを確認できた(動作は未確認)
+http://qiita.com/setsulla/items/923f0ec9e69aff9e15a4
+
+
+
+
+
