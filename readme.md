@@ -125,7 +125,7 @@ entity not found
 `from selenium import webdriver`    
 `from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`  
 `binary = FirefoxBinary(r'C:\Program Files (x86)\Mozilla Firefox\firefox.exe')`  
-`browser = webdriver.Firefox(firefox_binary=binary)'  
+`browser = webdriver.Firefox(firefox_binary=binary)`  
 に書き換えたらエラーなく動きました。  
 ここまで調べると、もしかしたらそもそもseleniumのversionUP必要なかったのではと恐ろしい  
 結論が出そうです；；  
