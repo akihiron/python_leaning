@@ -161,8 +161,8 @@ platforms\android-16にuiautomator.jarを確認できた(動作は未確認)
 まぁ、リンク先が変わったのでしょうよくあることなのでもうちょっといろんなサイトから情報を集めてこようと思います  
 で、分かったこと  
 1.Android版のSeleniumをダウンロードするにはAppiumが使えるみたい(Appiumが最も精力的に開発されている模様)[参考][Appiumのまとめ]
-2.Android 4.1以前のネイティブアプリをテストする場合、その再生ロジックは内部的にSelendroidが使われている(古い機種はSelendroidを使用する)
-3.appiumをダウンロードするにはnpmが必要[参考][Appium_download]
+2.Android 4.1以前のネイティブアプリをテストする場合、その再生ロジックは内部的にSelendroidが使われている(古い機種はSelendroidを使用する)  
+3.appiumをダウンロードするにはnpmが必要[参考][Appium_download]  
 以上であります。(￣▽￣)ゞラジャ  
 おいちょっと待てそもそもnpmって何ぞや！？俺は思った。
 >>googleさんはおしえてくれた。[こちら][npm]
@@ -174,7 +174,7 @@ platforms\android-16にuiautomator.jarを確認できた(動作は未確認)
 ###npmを使ったnode.js環境構築by Windows10
 まずはググった[npmをダウンロードする方法][npm_DL]
 意外と楽そうなので書いておきます  
-1．[node.js][node.js_DL]へアクセスしてダウンローダをダウンロード
+1．[node.js][node.js_DL]へアクセスしてダウンローダをダウンロード  
 以上。パスなんかも自動で通してくれるし、ダウンローダーの説明見るとわかるけど  
 npm(パッケージ管理ツール)も自動でインストールしてくれる。
 念のため、コマンドプロンプトから`npm -version`と打ってパスが通っていることを確認  
