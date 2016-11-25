@@ -114,7 +114,7 @@ selenium.common.exceptions.WebDriverException: Message: Expected browser binary 
 `from selenium import webdriver`  
 `from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`    
 `binary = FirefoxBinary('path/to/installed firefox binary')`  
-`browser = webdriver.Firefox(firefox_binary=binary)'  
+`browser = webdriver.Firefox(firefox_binary=binary)`  
 以下のエラーメッセージという仕打ちです。正直勘弁してほしかったのですが  
 selenium.common.exceptions.WebDriverException: Message: Failed to start browser:
 entity not found  
@@ -122,7 +122,7 @@ entity not found
 情報源：http://stackoverflow.com/questions/20950748/cannot-find-firefox-binary-in-path-make-sure-firefox-is-installed   
 どうやらバイナリに指定するのはMozilla Firefoxのexeファイルのよう  
 そこで先ほどのコマンドを  
-`from selenium import webdriver`    
+`from selenium import webdriver`    
 `from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`  
 `binary = FirefoxBinary(r'C:\Program Files (x86)\Mozilla Firefox\firefox.exe')`  
 `browser = webdriver.Firefox(firefox_binary=binary)'  
@@ -135,28 +135,57 @@ entity not found
 #2016/11/20　Android seleniumについて  
 ##環境構築  
 今回は以下のページを参考にAndroidのselenium導入についてやっていきます。
-http://zafiel.wingall.com/archives/6919
+<http://zafiel.wingall.com/archives/6919>
 さてとまずは、
 コマンドプロンプトからadbを実行して・・・
 (;;)残念Android-SDKが未導入でした。
 まずはそっからかよ(;´д｀)トホホ
 方法がわからない方はこの辺参考にしてください
 http://www.javadrive.jp/android/install/index1.html
+###Android-SDK環境の構築
 念のため、導入手順を書いておくと
 1．https://developer.android.com/studio/index.html#downloadsからandroid-sdk_r24.4.1-windows.zip
 インストーラなしをダウンロードする  
 2．zipフォルダを展開して、SDK Manager.exeを実行  
 ⇒失敗(javaがインストールされてなかったw)  
 3.上記の失敗を踏まえてJDKをhttp://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.htmlから
-ダウンロードPathの設定をする。
+ダウンロードPathの設定をする。  
 4.SDKが実行できるようになっていたので  
 Android SDK Tools,Android SDK Platform-Toolsをダウンロード
-これでADB周りは整うはず,ちなみに以下のサイトに従ってAPI16のSDK Platformをインストールしたところ
-platforms\android-16にuiautomator.jarを確認できた(動作は未確認)
-⇒動作しないことが判明[uiautomator.jar][]  
-http://qiita.com/setsulla/items/923f0ec9e69aff9e15a4
+これでADB周りは整うはず,ちなみに以下の[サイト][make_uiautomator.jar]に従ってAPI16のSDK Platformをインストールしたところ
+platforms\android-16にuiautomator.jarを確認できた(動作は未確認)  
+⇒動作しないことが判明[詳細][uiautomator.jar]  
+[make_uiautomator.jar][]  
+!!!android-server-2.21.0.apkダウンロードとか書いてあるけど  
+リンクは違うSeleniumHQとかに飛んでダウンロードできそうにない  
+まぁ、リンク先が変わったのでしょうよくあることなのでもうちょっといろんなサイトから情報を集めてこようと思います  
+で、分かったこと  
+1.Android版のSeleniumをダウンロードするにはAppiumが使えるみたい(Appiumが最も精力的に開発されている模様)[参考][Appiumのまとめ]
+2.Android 4.1以前のネイティブアプリをテストする場合、その再生ロジックは内部的にSelendroidが使われている(古い機種はSelendroidを使用する)
+3.appiumをダウンロードするにはnpmが必要[参考][Appium_download]
+以上であります。(￣▽￣)ゞラジャ  
+おいちょっと待てそもそもnpmって何ぞや！？俺は思った。
+>>googleさんはおしえてくれた。[こちら][npm]
+
+ようするにnode.jsのパッケージ管理ツールだそうです  
+で、node.jsっていうのはjavascriptにライブラリ機能を  
+実装するためのツール？？何度読んでもわからないので機会があるときまた勉強します。＞＜  
+まぁ、何はともあれ必要なんだろnpmってことで
+###npmを使ったnode.js環境構築by Windows10
+まずはググった[npmをダウンロードする方法][npm_DL]
+意外と楽そうなので書いておきます  
+1．[node.js][node.js_DL]へアクセスしてダウンローダをダウンロード
+以上。パスなんかも自動で通してくれるし、ダウンローダーの説明見るとわかるけど  
+npm(パッケージ管理ツール)も自動でインストールしてくれる。
+念のため、コマンドプロンプトから`npm -version`と打ってパスが通っていることを確認  
+
+ふぃーここまで終わった
+あとはさっきの[Appiumのダウンロードのページを参考][Appium_download]にAppiumを入れよう
 
 [uiautomator.jar]:https://github.com/akihiron/Java_learning/blob/master/decompile/Decompile.md "Uiautomator"
-
-
-
+[make_uiautomator.jar]http://qiita.com/setsulla/items/923f0ec9e69aff9e15a4 "uiautomator.jar作成参考ページ"
+[Appiumのまとめ]:http://blog.trident-qa.com/2014/04/selenium-mobile/ "seleniumモバイルの開発概要"
+[Appium_download]: http://qiita.com/siguremon/items/44ddba891119c3f78508 "Appiumインストール手順(Win)"
+[npm]: http://qiita.com/megane42/items/2ab6ffd866c3f2fda066　”npmとは”
+[npm_DL]: http://qiita.com/taipon_rock/items/9001ae194571feb63a5e "npmダウンロードツール"
+[node.js_DL]:https://nodejs.org/en/ "node.jsの公式サイト"
