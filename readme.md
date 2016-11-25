@@ -153,9 +153,10 @@ http://www.javadrive.jp/android/install/index1.html
 Android SDK Tools,Android SDK Platform-Toolsをダウンロード
 これでADB周りは整うはず,ちなみに以下のサイトに従ってAPI16のSDK Platformをインストールしたところ
 platforms\android-16にuiautomator.jarを確認できた(動作は未確認)
+⇒動作しないことが判明[uiautomator.jar][]  
 http://qiita.com/setsulla/items/923f0ec9e69aff9e15a4
 
-
+[uiautomator.jar]:https://github.com/akihiron/Java_learning/blob/master/decompile/Decompile.md "Uiautomator"
 
 
 
