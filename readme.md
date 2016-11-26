@@ -158,6 +158,8 @@ platforms\android-16にuiautomator.jarを確認できた(動作は未確認)
 [make_uiautomator.jar][]  
 !!!android-server-2.21.0.apkダウンロードとか書いてあるけど  
 リンクは違うSeleniumHQとかに飛んでダウンロードできそうにない  
+
+###[2016_11_26]
 まぁ、リンク先が変わったのでしょうよくあることなのでもうちょっといろんなサイトから情報を集めてこようと思います  
 で、分かったこと  
 1.Android版のSeleniumをダウンロードするにはAppiumが使えるみたい(Appiumが最も精力的に開発されている模様)[参考][Appiumのまとめ]
@@ -181,6 +183,50 @@ npm(パッケージ管理ツール)も自動でインストールしてくれる
 
 ふぃーここまで終わった
 あとはさっきの[Appiumのダウンロードのページを参考][Appium_download]にAppiumを入れよう
+で、まずは何もProxyなど設定しないでいきなり下記のコマンドインストールしてしまったが、以下のログ以外には問題がなかった。  
+`npm -g install appium`  
+とりあえずできたと考えることにする。  
+>>npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.12 (node_modules\appium\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.0.15: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+追々、こっちも実行するかも[参考][Appium_root]  
+`npm install wd         # get appium client`  
+`appium &               # start appium`  
+`node your-appium-test.js`  
+次にサンプルコードを動かすため[sample][Appium_Python]のreadme.mdをみながら準備します。
+Anacondaを使って以下の通りコマンドを入力しました。  
+`conda install Appium-Python-Client`  
+`anaconda search -t conda appium-python-client`  
+`anaconda show hargup/appium-python-client`  
+しかし、PlatformがLinux版しかないとな！！
+なら上の方法でとりあえずpipからインストールするか
+`pip install Appium-Python-Client`  
+おお、動いた。でもpip version upしろって言ってたな  
+現pip(ver8.1.2)最新は9.0.1らしい  
+ま、トリマ無視して  
+`conda skeleton pypi Appium-Python-Client`  
+これでAppiumも管理できるはずしかし、version0.2.3ってだいぶ古い気がする
+さっきみたlinuxのはPython client for Appium 1.3.6だったからなー  
+まぁいいや  
+では、sampleの動かし方だが、  
+1.サンプルのテストを[公式サイト][appium_sample]からgitpullする  
+2.Appiumサーバーを起動する  
+3.%homepath%\python_leaning\Appium\sample-code\sample-code\examples\pythonandroid_simple.pyのplatformVersionをAndroidのversionと合わせる(6.0)  
+4.サンプルスクリプトを実行する
+
+【条件】
+Androidのロックが外れていること、Android SDK-Toolが入っていることなど[参考][App_python_sample]
+以下実施コマンド
+`cd %homepath%/python_learning`  
+`mkdir appium`  
+`git clone https://github.com/appium/sample-code`  
+`start cmd`  
+`appium &`  
+もとのコマンドに戻って  
+`cd %homepath%\python_leaning\Appium\sample-code\sample-code\examples\python`  
+`py.test android_simple.py`  
+動いたーとりあえずここまでで終わります。
+
 
 [uiautomator.jar]:https://github.com/akihiron/Java_learning/blob/master/decompile/Decompile.md "Uiautomator"
 [make_uiautomator.jar]http://qiita.com/setsulla/items/923f0ec9e69aff9e15a4 "uiautomator.jar作成参考ページ"
@@ -189,3 +235,7 @@ npm(パッケージ管理ツール)も自動でインストールしてくれる
 [npm]: http://qiita.com/megane42/items/2ab6ffd866c3f2fda066　”npmとは”
 [npm_DL]: http://qiita.com/taipon_rock/items/9001ae194571feb63a5e "npmダウンロードツール"
 [node.js_DL]:https://nodejs.org/en/ "node.jsの公式サイト"
+[Appium_root]http://appium.io/ "Appium_公式サイト"
+[appium_sample]:https://github.com/appium/sample-code "appiumの公式ページのサンプルスクリプト"
+[Appium_Python]:https://github.com/appium/sample-code/tree/master/sample-code/examples/python "Appium_pythonの導入"
+[App_python_sample]:http://qiita.com/skinoshita/items/211ca23edbb5f2776771 "appium実行するまでのブログ？"
