@@ -215,8 +215,8 @@ Anacondaを使って以下の通りコマンドを入力しました。
 4.サンプルスクリプトを実行する
 
 【条件】
-Androidのロックが外れていること、Android SDK-Toolが入っていることなど[参考][App_python_sample]
-以下実施コマンド
+Androidのロックが外れていること、Android SDK-Toolが入っていることなど[参考はこちら][App_python_sample]  
+以下,動かしたときの実施コマンド  
 `cd %homepath%/python_learning`  
 `mkdir appium`  
 `git clone https://github.com/appium/sample-code`  
