@@ -3,7 +3,7 @@
 ###設定元の環境
 OS　Windows10Pro(64bit)  
 ####python3.5.1
-####selenuim
+####selenuim 3.0.1
 ####opencv3.1.0 
 必要になったライブラリなどをこれから随時追加するかも？  
 今回はseleniumを使用してWebテストを行いたいので
