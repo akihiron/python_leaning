@@ -1,100 +1,100 @@
-datetime.now
-datetime.now()
-time.strftime()
-time.strftime('%Y')
-time.strftime('%Y','%M')
-time.strftime('%Y%M')
-time.strftime('%Y%m')
-time.strftime('%Y%m%d')
-time.strftime('%Y%m%d%H')
-env=os.env("pythonpath")
-import 0s
-import os
-env=os.env("pythonpath")
-env=os.getenv("pythonpath")
+desired_caps = {}
+desired_caps['platformName'] = 'Android'
+desired_caps['platformVersion'] = '6.0'#'4.2'
+desired_caps['deviceName'] = 'Android Emulator'
+#desired_caps['app'] = PATH('../../../sample-code/apps/ApiDemos/bin/ApiDemos-debug.apk')
+self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+app_package="com.android.chrome"
+app_activity="com.google.android.apps.chrome.Main"
+driver.start_activity(app_package, app_activity)
+from appium import webdriver
+desired_caps = {}
+desired_caps['platformName'] = 'Android'
+desired_caps['platformVersion'] = '6.0'#'4.2'
+desired_caps['deviceName'] = 'Android Emulator'
+#desired_caps['app'] = PATH('../../../sample-code/apps/ApiDemos/bin/ApiDemos-debug.apk')
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+app_package="com.android.chrome"
+app_activity="com.google.android.apps.chrome.Main"
+driver.start_activity(app_package, app_activity)
+from appium import webdriver
+desired_caps = {}
+desired_caps['platformName'] = 'Android'
+desired_caps['platformVersion'] = '6.0'#'4.2'
+desired_caps['deviceName'] = 'Android Emulator'
+#desired_caps['app'] = PATH('../../../sample-code/apps/ApiDemos/bin/ApiDemos-debug.apk')
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+app_package="com.android.chrome"
+app_activity="com.google.android.apps.chrome.Main"
+driver.start_activity(app_package, app_activity)
+from appium import webdriver
+desired_caps = {}
+desired_caps['platformName'] = 'Android'
+desired_caps['platformVersion'] = '6.0'#'4.2'
+desired_caps['deviceName'] = 'Android Emulator'
+#desired_caps['app'] = PATH('../../../sample-code/apps/ApiDemos/bin/ApiDemos-debug.apk')
+desired_caps['app_package']="com.android.chrome"
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+desired_caps = {}
+desired_caps['platformName'] = 'Android'
+desired_caps['platformVersion'] = '6.0'#'4.2'
+desired_caps['deviceName'] = 'Android Emulator'
+#desired_caps['app'] = PATH('../../../sample-code/apps/ApiDemos/bin/ApiDemos-debug.apk')
+desired_caps['package']="com.android.chrome"
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+desired_caps["package]
+desired_caps["package"]
+from appium import webdriver
+desired_caps = {}
+desired_caps['platformName'] = 'Android'
+desired_caps['platformVersion'] = '6.0'#'4.2'
+desired_caps['deviceName'] = 'Android Emulator'
+#desired_caps['app'] = PATH('../../../sample-code/apps/ApiDemos/bin/ApiDemos-debug.apk')
+desired_caps['package']="com.android.chrome"
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+from appium import webdriver
+desired_caps = {}
+desired_caps['platformName'] = 'Android'
+desired_caps['platformVersion'] = '6.0'#'4.2'
+desired_caps['deviceName'] = 'Android Emulator'
+#desired_caps['app'] = PATH('../../../sample-code/apps/ApiDemos/bin/ApiDemos-debug.apk')
+desired_caps['package']="com.android.chrome/com.google.android.apps.chrome.Main"
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+desired_caps['app-pkg']="com.android.chrome/com.google.android.apps.chrome.Main"
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+from appium import webdriver
+desired_caps = {}
+desired_caps['platformName'] = 'Android'
+desired_caps['platformVersion'] = '6.0'#'4.2'
+desired_caps['deviceName'] = 'Android Emulator'
+#desired_caps['app'] = PATH('../../../sample-code/apps/ApiDemos/bin/ApiDemos-debug.apk')
+desired_caps['app-pkg']="com.android.chrome/com.google.android.apps.chrome.Main"
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+desired_caps['appPackage']="com.android.chrome")
+desired_caps['appPackage']="com.android.chrome"
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+desired_caps['appPackage']="com.android.chrome/com.google.android.apps.chrome.Main"
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+desired_caps['appPackage']="com.android.chrome"
+desired_caps[appActivity']="com.google.android.apps.chrome.Main"
+desired_caps['appActivity']="com.google.android.apps.chrome.Main"
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+driver.quit
+driver.quit()
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+env=os.getenv("USERPROFILE")
 env
-path=os.path.join(env,timeNow)
-timeNow = time.strftime('%Y%m%d%H')
-path = os.path.join(env,timeNow)
-path
-path = os.path.join(env,timeNow)
-ret,frame=cap.read()
-cap=cv2.VideoCapture(0)#ImageDevice‘I‘ð ‚±‚ê‚µ‚©Œ©‚Â‚©‚ç‚È‚©‚Á‚½‚¯‚Çww
-import cv2
-import numpy
-import os,time
-from datetime import datetime
-cap=cv2.VideoCapture(0)#ImageDevice‘I‘ð ‚±‚ê‚µ‚©Œ©‚Â‚©‚ç‚È‚©‚Á‚½‚¯‚Çww
-time
-timeNow = time.strftime('%Y%m%d%H')
-timeNow
-ret,frame=cap.read()
-if ret:
-    cv2.imwrite(path,frame)
-env=os.getenv("pythonpath")
-env=os.path.join(os.getenv("HOMEDRIVE"),env)
-if ret:
-        cv2.imwrite(path,frame)
-pat
-path
-path = os.path.join(env,timeNow+".png")
-path
-if ret:
-        cv2.imwrite(path,frame)
-type(time.srtftiem())
-import time
-type(time.srtftiem())
-type(time.strftiem())
-type(time.strftime('%H'))
-type(time.intftime('%H'))
-int(time.intftime('%H')
-)
-type(int(time.strftime('%H')))
-int(time.strftime('%H'))
-import RecodePhoto
+from appium import webdriver
+desired_caps = {}
+desired_caps['platformName'] = 'Android'
+desired_caps['platformVersion'] = '6.0'#'4.2'
+desired_caps['deviceName'] = 'Android Emulator'
+#desired_caps['app'] = PATH('../../../sample-code/apps/ApiDemos/bin/ApiDemos-debug.apk')
+desired_caps['appPackage']="com.android.chrome"
+desired_caps['appActivity']="com.google.android.apps.chrome.Main"
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+driver.get
+driver.get("https://github.com/akihiron/python_leaning")
 exit
-import RecodePhoto
-from PlantReportTool import RecodePhoto
-from plantReportTool import RecodePhoto
-import python
-import unittest
-import selenium
-selenium.webdriver.firefox()
-from selenium import webdriver
-webdriver.Firefox()
-binry=webdriver.Binary()
-webdriver.Firefox()
-f_dr=webdriver.Firefox()
-pip
-from selenium import webdriver
-webdriver.Firefox()
-from selenium import webdriver
-webdriver.Firefox()
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
-binary = FirefoxBinary('path/to/installed firefox binary')
-browser = webdriver.Firefox(firefox_binary=binary)
-binary = FirefoxBinary(r'C:\Program Files (x86)\Mozilla Firefox\firefox.exe')
-browser = webdriver.Firefox(firefox_binary=binary)
-browserc = webdriver.chrome()
-browser = webdriver.Firefox(firefox_binary=binary)
-browserc = webdriver.Chrome()
-from selenium.webdriver.firefox_binary import FirefoxBinary
-browserc = webdriver.Chrome(r'C:\Windows\SysWOW64\chromedriver.exe')
-browserc.get('mail')
-browserc.get('https://www.google.com/intl/ja/mail/help/about.html')
-browser.get('https://www.google.com/intl/ja/mail/help/about.html')
-import os
-from time import sleep
-import unittest
-from appium import webdriver
-PATH = lambda p: os.path.abspath(
-    os.path.join(os.path.dirname(__file__), p)
-)
-path
-PATH
-from appium import webdriver
-help(webdriver)
-help(webdriver.Remote)
-help(webdriver.Remote.desired_caps)
-help(webdriver.Remote.desired_capability)
-help(webdriver.Remote)
+driver.quit()
+exit
