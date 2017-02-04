@@ -89,10 +89,11 @@ Version変更方法は
 `pip install -U selenium`  
 pipにはVersionアップのコマンドがないらしく  
 -Uオプションを使用してversionを変えるらしい  
-戻す方法は調べてない(-_=;;)  
+戻す方法は調べてない(-_=;;)  
 大丈夫かな？  
-
-とりあえずseleniumのversionが2.536→3.0.1になりました。 
+⇒[20170204]インストールするときにversionを指定すればいいっぽいので次で元に戻せる  
+`pip install -U selenium==2.53.6`  
+とりあえずseleniumのversionが2.53.6→3.0.1になりました。 
 以前の方法で管理しているのでcondaの方にもきちんと  
 `conda list | find "selenium"`  
 で確かめたところ反映されていました.  
