@@ -236,7 +236,7 @@ Androidのロックが外れていること、Android SDK-Toolが入っている
 [npm]: http://qiita.com/megane42/items/2ab6ffd866c3f2fda066　”npmとは”
 [npm_DL]: http://qiita.com/taipon_rock/items/9001ae194571feb63a5e "npmダウンロードツール"
 [node.js_DL]:https://nodejs.org/en/ "node.jsの公式サイト"
-[Appium_root]http://appium.io/ "Appium_公式サイト"
+[Appium_root]:http://appium.io/ "Appium_公式サイト"
 [appium_sample]:https://github.com/appium/sample-code "appiumの公式ページのサンプルスクリプト"
 [Appium_Python]:https://github.com/appium/sample-code/tree/master/sample-code/examples/python "Appium_pythonの導入"
 [App_python_sample]:http://qiita.com/skinoshita/items/211ca23edbb5f2776771 "appium実行するまでのブログ？"
