@@ -89,7 +89,7 @@ Version変更方法は
 `pip install -U selenium`  
 pipにはVersionアップのコマンドがないらしく  
 -Uオプションを使用してversionを変えるらしい  
-戻す方法は知ればてない(-_=;;)  
+戻す方法は調べてない(-_=;;)  
 大丈夫かな？  
 
 とりあえずseleniumのversionが2.536→3.0.1になりました。 
@@ -122,8 +122,8 @@ entity not found
 情報源：http://stackoverflow.com/questions/20950748/cannot-find-firefox-binary-in-path-make-sure-firefox-is-installed   
 どうやらバイナリに指定するのはMozilla Firefoxのexeファイルのよう  
 そこで先ほどのコマンドを  
-`from selenium import webdriver`    
-`from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`  
+`from selenium import webdriver`  
+`from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`  
 `binary = FirefoxBinary(r'C:\Program Files (x86)\Mozilla Firefox\firefox.exe')`  
 `browser = webdriver.Firefox(firefox_binary=binary)`  
 に書き換えたらエラーなく動きました。  
