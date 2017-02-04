@@ -89,10 +89,11 @@ Version変更方法は
 `pip install -U selenium`  
 pipにはVersionアップのコマンドがないらしく  
 -Uオプションを使用してversionを変えるらしい  
-戻す方法は知ればてない(-_=;;)  
+戻す方法は調べてない(-_=;;)  
 大丈夫かな？  
-
-とりあえずseleniumのversionが2.536→3.0.1になりました。 
+⇒[20170204]インストールするときにversionを指定すればいいっぽいので次で元に戻せる  
+`pip install -U selenium==2.53.6`  
+とりあえずseleniumのversionが2.53.6→3.0.1になりました。 
 以前の方法で管理しているのでcondaの方にもきちんと  
 `conda list | find "selenium"`  
 で確かめたところ反映されていました.  
@@ -122,8 +123,8 @@ entity not found
 情報源：http://stackoverflow.com/questions/20950748/cannot-find-firefox-binary-in-path-make-sure-firefox-is-installed   
 どうやらバイナリに指定するのはMozilla Firefoxのexeファイルのよう  
 そこで先ほどのコマンドを  
-`from selenium import webdriver`    
-`from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`  
+`from selenium import webdriver`  
+`from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`  
 `binary = FirefoxBinary(r'C:\Program Files (x86)\Mozilla Firefox\firefox.exe')`  
 `browser = webdriver.Firefox(firefox_binary=binary)`  
 に書き換えたらエラーなく動きました。  
@@ -235,7 +236,7 @@ Androidのロックが外れていること、Android SDK-Toolが入っている
 [npm]: http://qiita.com/megane42/items/2ab6ffd866c3f2fda066　”npmとは”
 [npm_DL]: http://qiita.com/taipon_rock/items/9001ae194571feb63a5e "npmダウンロードツール"
 [node.js_DL]:https://nodejs.org/en/ "node.jsの公式サイト"
-[Appium_root]http://appium.io/ "Appium_公式サイト"
+[Appium_root]:http://appium.io/ "Appium_公式サイト"
 [appium_sample]:https://github.com/appium/sample-code "appiumの公式ページのサンプルスクリプト"
 [Appium_Python]:https://github.com/appium/sample-code/tree/master/sample-code/examples/python "Appium_pythonの導入"
 [App_python_sample]:http://qiita.com/skinoshita/items/211ca23edbb5f2776771 "appium実行するまでのブログ？"
