@@ -4,8 +4,9 @@ import numpy
 import os,time
 from datetime import datetime
 cap=cv2.VideoCapture(0)#ImageDevice選択 これしか見つからなかったけどww
-env=os.getenv("pythonpath")
-#env=os.path.join(os.getenv("HOMEDRIVE"),env)
+#env=os.getenv("USERPROFILE")
+env=os.path.abspath(os.path.dirname(__file__))#保存先の記載defaltでは ./plant_pictures に保存
+env=os.path.join(env,"plant_pictures")
 
 def ImageCaputureEveryHour():
     """
@@ -23,6 +24,10 @@ def ImageCaputureEveryHour():
             time.sleep(600)
 def takePicture():
     timeNow = time.strftime('%Y%m%d%H')
+    print("保存先は%sです。"%env)
+    if not(os.path.exists(env)): 
+        os.mkdir(env)
+#        os.mkdirs(env)
     path = os.path.join(env,timeNow+".png")
     ret,frame=cap.read()
     if ret:
