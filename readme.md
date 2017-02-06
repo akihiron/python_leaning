@@ -4,7 +4,7 @@
 OS　Windows10Pro(64bit)  
 ####python3.5.1
 ####selenuim 3.0.1
-####opencv3.1.0 
+####opencv3.1.0
 必要になったライブラリなどをこれから随時追加するかも？  
 今回はseleniumを使用してWebテストを行いたいので
 seleniumのインストールを行います。ですが、condaからではインストールできませんでした。  
@@ -21,7 +21,7 @@ python2.7なども使えるように環境を構築する
 まずは、インストールしたAnacondaをそのまま展開(環境変数なども自動で設定してもらった)  
  インストール後、コマンドプロンプトを開いて以下を実行する  
  `conda create -n p27 python=2.7 anaconda`  
- これでpython2.7の環境構築も終了です。 
+ これでpython2.7の環境構築も終了です。
  この他にも同じコマンドで仮想の環境がいくつでも作れるそうです。  
  py27の部分には自分で分かるような名前を付けるといいと思います。  
  作った環境を見るためには以下のコマンドで確認できます  
@@ -93,7 +93,7 @@ pipにはVersionアップのコマンドがないらしく
 大丈夫かな？  
 ⇒[20170204]インストールするときにversionを指定すればいいっぽいので次で元に戻せる  
 `pip install -U selenium==2.53.6`  
-とりあえずseleniumのversionが2.53.6→3.0.1になりました。 
+とりあえずseleniumのversionが2.53.6→3.0.1になりました。
 以前の方法で管理しているのでcondaの方にもきちんと  
 `conda list | find "selenium"`  
 で確かめたところ反映されていました.  
@@ -112,10 +112,12 @@ https://github.com/mozilla/geckodriver/releases
 上記のサイト通り同じことで怒られました。ちょっと安心(~_~)  
 selenium.common.exceptions.WebDriverException: Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line  
 とりあえず、指示に従って以下を実行  
-`from selenium import webdriver`  
-`from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`    
-`binary = FirefoxBinary('path/to/installed firefox binary')`  
-`browser = webdriver.Firefox(firefox_binary=binary)`  
+``` python
+from selenium import webdriver  
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary  
+binary = FirefoxBinary('path/to/installed firefox binary')  
+browser = webdriver.Firefox(firefox_binary=binary)  
+```
 以下のエラーメッセージという仕打ちです。正直勘弁してほしかったのですが  
 selenium.common.exceptions.WebDriverException: Message: Failed to start browser:
 entity not found  
@@ -123,16 +125,40 @@ entity not found
 情報源：http://stackoverflow.com/questions/20950748/cannot-find-firefox-binary-in-path-make-sure-firefox-is-installed   
 どうやらバイナリに指定するのはMozilla Firefoxのexeファイルのよう  
 そこで先ほどのコマンドを  
-`from selenium import webdriver`  
-`from selenium.webdriver.firefox.firefox_binary import FirefoxBinary`  
-`binary = FirefoxBinary(r'C:\Program Files (x86)\Mozilla Firefox\firefox.exe')`  
-`browser = webdriver.Firefox(firefox_binary=binary)`  
+```python
+from selenium import webdriver  
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary  
+binary = FirefoxBinary(r'C:\Program Files (x86)\Mozilla Firefox\firefox.exe')  
+browser = webdriver.Firefox(firefox_binary=binary)  
+```
 に書き換えたらエラーなく動きました。  
 ここまで調べると、もしかしたらそもそもseleniumのversionUP必要なかったのではと恐ろしい  
 結論が出そうです；；  
 まあ、Chromeなども動かすのに引数が一つ増えたけどそれだけなのでとりあえず、良しとします  
 `browserc = webdriver.Chrome(r'C:\Windows\SysWOW64\chromedriver.exe')`  
 
+##[2017/02/06]  
+host設定をしたブラウザを動かすことができなかったのでここでhostの設定について
+考察を記述する。  
+参考までにこんな質疑もあった[/etc/hosts反映][domain解決？]が何のことやら・・・  
+下のコマンドでおそらく設定できるはず　
+```python
+from selenium import webdriver  
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary  
+from selenium.webdriver import FirefoxProfile
+binary = FirefoxBinary('path/to/installed firefox binary')  
+profile=FirefoxProfile()
+profile=FirefoxProfile(r"C:\Windows\System32\drivers\etc")
+#profile.set_preference('network.proxy.no_proxies_on', 'localhost, 127.0.0.1')
+#profile.set_preference( "network.proxy.socks", '127.0.0.1' )
+#profile.addAdditionalPreference("network.proxy.http", "localhost");
+#profile.addAdditionalPreference("network.proxy.http_port", "3128");
+profile.set_Preference("network.proxy.type", 5)#5 - Use system proxy settings. 
+browser = webdriver.Firefox(firefox_profile=profile,firefox_binary=binary)
+```
+ヒントになればFirefoxProfileの最初の文字はabout:configの中身を表していてＤＮＳ関係はnetwork.dns
+に設定される。  
+[Firefox_aboutconfig][]はabout:configの内容のまとめである。  
 #2016/11/20　Android seleniumについて  
 ##環境構築  
 今回は以下のページを参考にAndroidのselenium導入についてやっていきます。
@@ -206,6 +232,7 @@ Anacondaを使って以下の通りコマンドを入力しました。
 現pip(ver8.1.2)最新は9.0.1らしい  
 ま、トリマ無視して  
 `conda skeleton pypi Appium-Python-Client`  
+
 これでAppiumも管理できるはずしかし、version0.2.3ってだいぶ古い気がする
 さっきみたlinuxのはPython client for Appium 1.3.6だったからなー  
 まぁいいや  
@@ -240,3 +267,5 @@ Androidのロックが外れていること、Android SDK-Toolが入っている
 [appium_sample]:https://github.com/appium/sample-code "appiumの公式ページのサンプルスクリプト"
 [Appium_Python]:https://github.com/appium/sample-code/tree/master/sample-code/examples/python "Appium_pythonの導入"
 [App_python_sample]:http://qiita.com/skinoshita/items/211ca23edbb5f2776771 "appium実行するまでのブログ？"
+[domain解決？]:http://stackoverflow.com/questions/28774946/selenium-firefox-driver-reading-from-hosts-file
+[Firefox_aboutconfig]:http://blog.goo.ne.jp/sunpillar070516/e/1ecd44922758b0d245a338ab5dc3352c
